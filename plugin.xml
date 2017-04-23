@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.yaoshangwang.yswapp.plugins.nav" version="0.0.1"
+	xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+	<name>YswNavigation</name>
+	<js-module name="YswNavigation" src="www/YswNavigation.js">
+		<clobbers target="com.yaoshangwang.yswapp.plugins.nav.YswNavigation" />
+	</js-module>
+	<platform name="android">
+		<config-file parent="/*" target="res/xml/config.xml">
+			<feature name="YswNavigation">
+				<param name="android-package" value="com.yaoshangwang.yswapp.plugins.nav.YswNavigation" />
+			</feature>
+		</config-file>
+		<config-file parent="/*" target="AndroidManifest.xml" />
+		<source-file src="src/android/YswNavigation.java"
+			target-dir="src/com/yaoshangwang/yswapp/plugins/nav" />
+		<source-file src="src/android/OpenLocalMapUtil.java"
+			target-dir="src/com/yaoshangwang/yswapp/plugins/nav" />
+	</platform>
+	<platform name="ios">
+		<config-file parent="/*" target="config.xml">
+			<feature name="YswNavigation">
+				<param name="ios-package" value="YswNavigation" />
+			</feature>
+		</config-file>
+		<source-file src="src/ios/YswNavigation.m" />
+	</platform>
+</plugin>
